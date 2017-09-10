@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# API Module
-# Sends datasets of measurement data to the API
+# SolarPi Firmware
+# Sends datasets of measurement data to the Solarcoin Blockchain and the SolarPi API
 
 # Created for the Smartenergy Hackathon in Bangkok 2017
 # by Dominik Schaefer - Team Solar Pi
@@ -14,7 +14,7 @@ import requests, json, time, datetime, os
 # Blockchain Communication #
 ############################
 
-def write2blockchain(timestr,energy,address="8Wrc5DaCFFzPBLsBZsnRtaXnrUygGjm6gJ",\
+def write2blockchain(timestr,energy,address="enterwalletaddress",\
                      walletpassphrase="enterpassphrase"):
     comment = "{\"data-logger\":\"SolarPi\",\"Size_kW\":\"13.37\",\"lat\":\"13.742385N\",\"long\":\"100.528114E\",\"Comment\":\"Hello World!\",\"IoT\":\"RPi 3b, static, solar powered\",\"generation\":\""+timestr+"\",\"MWh\":\""+energy+"\"} Uploaded by Team SolarPi for SEH2017 - http://www.smartenergyhackathon.com"
     os.system("solarcoind walletlock")
